@@ -6,4 +6,4 @@ def add(a, b):
 	return c
 
 
-add(335, 345)
+add(1, 345)
