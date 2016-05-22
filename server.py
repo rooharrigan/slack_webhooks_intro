@@ -2,12 +2,18 @@ from flask import Flask, request, render_template, redirect, flash
 from random import choice, sample
 import requests
 import json
+import os
 
 
 COMPLIMENTS = ["smart", "clever", "tenacious", "awesome", "Pythonic"]
 
 app = Flask(__name__)
 app.secret_key = "What's up chickens what you bockin' with."
+
+# Using Python os.environ to get at environmental variables
+#
+# Note: you must run `source secrets.sh` before running this file
+# to make sure these environmental variables are set.
 
 #######################################################################
 
@@ -26,7 +32,7 @@ def submit_json_to_webhook():
 		'text' : text
 	}
 
-	url = "https://hooks.slack.com/services/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"
+	url = os.environ['WEBHOOK_URL']
 
 	print payload
 
