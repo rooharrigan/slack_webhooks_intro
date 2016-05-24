@@ -2,45 +2,64 @@
 {% block body %}
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container full" id="cats">
         <div class="row">
-            <div class="col-md-9 col-sm-12">
-            <h1>Easy Peasy Incoming Webhooks</h1>
+        	<div class="col-md-2 col-sm-2">
+	        	<div id="logo">
+	        		<img src="static/slack.png" alt="Slack logo" height="42" width="42">
+	        	</div>
+        	</div>
+		<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+			<h1>Easy Peasy Incoming Webhooks</h1>
+		</div>
+	</div>
 
-                <p>Because there's no need to make things more complicated than they already are. <br><br>
-                And now, some hiposter ipsum for you: <br>
-                You probably haven't heard of them quinoa thundercats, irony DIY cred wolf waistcoat ennui artisan yr. Photo booth VHS gluten-free echo park, vinyl tattooed kombucha pour-over polaroid jean shorts. Biodiesel mumblecore pinterest actually mlkshk, fingerstache sustainable everyday carry listicle affogato. Church-key try-hard sartorial tofu, lomo helvetica next level offal williamsburg narwhal. Artisan banh mi green juice, VHS twee banjo yr lomo before they sold out art party small batch. Next level tilde asymmetrical venmo kinfolk. Cliche farm-to-table skateboard next level church-key truffaut.</p>
+	<div class="row">
+		<div class="col-md-9 col-sm-12">
+			<br>
+			<p>Because there's no need to make things more complicated than they already are. <br><br>
+	                And now, some hiposter ipsum for you: <br>
+	                You probably haven't heard of them quinoa thundercats, irony DIY cred wolf waistcoat ennui artisan yr. Photo booth VHS gluten-free echo park, vinyl tattooed kombucha pour-over polaroid jean shorts. Biodiesel mumblecore pinterest actually mlkshk, fingerstache sustainable everyday carry listicle affogato. Church-key try-hard sartorial tofu, lomo helvetica next level offal williamsburg narwhal. Artisan banh mi green juice, VHS twee banjo yr lomo before they sold out art party small batch. Next level tilde asymmetrical venmo kinfolk. Cliche farm-to-table skateboard next level church-key truffaut.</p>
 
 
-                <!-- Webhook Form Submission -->
-                <div>
-                <h3>Build your JSON here</h3>
-			<form action="/submit" method="post">
-			<label>"text" : <input type="text" name="text"></label><br><br>
+	                <!-- Webhook Form Submission -->
+	                <h3>Build your message here</h3>
+				<form action="/submit" method="post">
+					<h5>Message Body</h5><br>
+					<label>"main text" : <input type="text" name="main-text"></label><br>
+					<label>"moar text" : <input type="text" name="moar-text"></label><br><br>
+					<h5>Attachments</h5><br>
+					<label>"title": <input type="text" name="title-1"></label>
+					<label>"text": <input type="text" name="text-1"></label>
+					<label>"color": <input type="text" name="color-1"></label><br><br><br>
+					<label>"title": <input type="text" name="title-2"></label>
+					<label>"text": <input type="text" name="text-2"></label>
+					<label>"color": <input type="text" name="color-2"></label><br><br>
+					<label>"title": <input type="text" name="title-3"></label>
+					<label>"text": <input type="text" name="text-3"></label>
+					<label>"color": <input type="text" name="color-3"></label><br><br>
 
-				<input type="submit" value="Do it!">
-			</form>
+					<br>
+					<input type="submit" value="Show me the message!">
+				</form>
 
 
-		<br>
-		<br>
-		<br>
-		<!-- Handle flash messages here -->
-		<h3>Did it work?</h3>
-		{% with messages = get_flashed_messages() %}
-		  {% if messages %}
-		    <ul class=flashes>
-		    {% for message in messages %}
-		      <li>{{ message }}</li>
-		    {% endfor %}
-		    </ul>
-		  {% endif %}
-		{% endwith %}
-                </div>
-
-            </div>
-        </div>
-        <!-- /.row -->
+			<br>
+			<br>
+			<br>
+			<!-- Handle flash messages here -->
+			<h3>Did it work?</h3>
+			{% with messages = get_flashed_messages() %}
+			  {% if messages %}
+			    <ul class=flashes>
+			    {% for message in messages %}
+			      <li>{{ message }}</li>
+			    {% endfor %}
+			    </ul>
+			  {% endif %}
+			{% endwith %}
+                </div> <!-- close column -->
+        </div> <!-- close row -->
     </div>
     <!-- /.container -->
 

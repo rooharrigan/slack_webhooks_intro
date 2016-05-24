@@ -24,12 +24,46 @@ def index():
 
 @app.route('/submit',  methods=['POST'])
 def submit_json_to_webhook():
-	text = request.form["text"]
-	print text
+	main_text = request.form["main-text"]
+	print main_text
+	moar_text = request.form["moar-text"]
+	print moar_text
+	main_text += ("\n" + moar_text)
+
+	title_1 = request.form["title-1"]
+	text_1 = request.form["text-1"]
+	color_1 = request.form["color-1"]
+
+	title_2 = request.form["title-2"]
+	text_2 = request.form["text-2"]
+	color_2 = request.form["color-2"]
+
+
+	title_3 = request.form["title-3"]
+	text_3 = request.form["text-3"]
+	color_3 = request.form["color-3"]
+
 
 	#Build the JSON to send
 	payload = {
-		'text' : text
+		'text' : main_text,
+		'attachments' : [
+			{
+				"color" : color_1,
+				"title"	: title_1,
+				"text"	: text_1,
+			},
+			{
+				"color" : color_2,
+				"title"	: title_2,
+				"text"	: text_2,
+			},
+			{
+				"color" : color_3,
+				"title"	: title_3,
+				"text"	: text_3,
+			},
+		]
 	}
 
 	url = os.environ['WEBHOOK_URL']
@@ -46,12 +80,7 @@ def submit_json_to_webhook():
 	else:
 		flash('Oh no, something went wrong. You are getting a %s  status code error.' % (status_code))
 
-	#If you get an ok=true response, flash that it worked and redirect!
-	flash('You did it!')
 	return redirect("/")
-
-	#If not, flash an error and keep_input in your form
-
 
 
 
