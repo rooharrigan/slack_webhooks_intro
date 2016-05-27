@@ -4,10 +4,13 @@ import requests
 import json
 import os
 
-app = Flask(__name__)
-app.secret_key = "SHHHHH ITS A SECRETTTTT."
 
-# We will use os.environ to get at the secret URL as an environmental variable
+COMPLIMENTS = ["smart", "clever", "tenacious", "awesome", "Pythonic"]
+
+app = Flask(__name__)
+app.secret_key = "What's up chickens what you bockin' with."
+
+# Using Python os.environ to get at environmental variables
 #
 # Note: you must run `source secrets.sh` before running this file
 # to make sure these environmental variables are set.
@@ -21,36 +24,54 @@ def index():
 
 @app.route('/submit',  methods=['POST'])
 def submit_json_to_webhook():
-	main_text = request.form["**"]
-	# moar_text = grab the information coming from your form element named 'moar-text'
-	# main_text += ("\n" + moar_text)
+	main_text = request.form["main-text"]
+	moar_text = request.form["moar-text"]
+	main_text += ("\n" + moar_text)
 
-	# Same as above, grab the info coming from your title, text, and color form elements.
-	# and put fill in the skeleton of the attachemnts dictionary below.
-	# title_1 =
-	# text_1 =
-	# color_1 =
+	title_1 = request.form["title-1"]
+	text_1 = request.form["text-1"]
+	color_1 = request.form["color-1"]
+
+	title_2 = request.form["title-2"]
+	text_2 = request.form["text-2"]
+	color_2 = request.form["color-2"]
+
+
+	title_3 = request.form["title-3"]
+	text_3 = request.form["text-3"]
+	color_3 = request.form["color-3"]
 
 
 	#Build the JSON to send
 	payload = {
 		'text' : main_text,
-		# 'attachments' : [
-		# 	{
-				# "color" :
-		# 	},
-		# ]
+		'attachments' : [
+			{
+				"color" : color_1,
+				"title"	: title_1,
+				"text"	: text_1,
+			},
+			{
+				"color" : color_2,
+				"title"	: title_2,
+				"text"	: text_2,
+			},
+			{
+				"color" : color_3,
+				"title"	: title_3,
+				"text"	: text_3,
+			},
+		]
 	}
 
-	# Your secret URL sourced in from secrets.sh
 	url = os.environ['WEBHOOK_URL']
 
-	# Send a JSONified version of your payload to the URL Slack provides
+	print payload
+
+	#Send it to the URL Slack provides
 	r = requests.post(url, data=json.dumps(payload))
 	status_code = r.status_code
 
-	# Check the status code of the respond you receive from Slack.
-	# If it's an error, flash a message about it at the bottom of the page.
 	if status_code == 200:
 		flash('You did it!')
 		return redirect("/")
