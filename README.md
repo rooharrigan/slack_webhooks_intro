@@ -26,9 +26,8 @@ It's a simple app written in Python using Flask.
 
 
 ## Workshop Steps: Easy Peasy Incoming Webhooks
-- Once you have your server up and running, modify the code you are given to learn more about sending notifications in Slack!
 
-- Open [our incoming webhooks page](https://api.slack.com/incoming-webhooks) as a guide for completing the following tasks.  There are lots of in-line comments to guide you, but here they are in order:
+Once you have your server up and running, modify the code you are given to learn more about sending notifications in Slack! Open [our incoming webhooks page](https://api.slack.com/incoming-webhooks) as a guide for completing the following tasks.  There are lots of in-line comments to guide you, but here they are in order:
 
 1. Set up the form and the server so that the form submits a post to the server's /submit route.
 
