@@ -26,16 +26,17 @@ It's a simple app written in Python using Flask.
 
 
 ## Workshop Steps: Easy Peasy Incoming Webhooks
-- Once you have your server up and running, modify the code you are given to learn more about sending notifications in Slack!  
+- Once you have your server up and running, modify the code you are given to learn more about sending notifications in Slack!
 
-Open <https://api.slack.com/incoming-webhooks|our incoming webhooks page> as a guide for completing the following tasks.  There are lots of in-line comments to guide you, but here they are in order:
+- Open [our incoming webhooks page](https://api.slack.com/incoming-webhooks) as a guide for completing the following tasks.  There are lots of in-line comments to guide you, but here they are in order:
+
 1. Set up the form and the server so that the form submits a post to the server's /submit route.
 
 2.  Edit the route so the server can get the 'main-text' out of the request it is receiving.
 
 3. Add another text field to accept 'moar-text'.  Make sure the server can parse this one too, and add it into the dictionary we are using to construct JSON.
 
-4. Add in a field and try sending a link! 
+4. Add in a field and try sending a link!
 
 5. Try sending an emoji using the Slack notation, like `:tada:`, in one of your existing fields.
 
