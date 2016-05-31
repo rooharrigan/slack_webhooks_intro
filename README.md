@@ -21,7 +21,8 @@ It's a simple app written in Python using Flask.
 	- `pip install -r requirements.txt`
 	- `source secrets.sh`
 	- `python server.py`
-- Once your server starts successfully, navigate to localhost:5000 and check that the form has successfully loaded.  *note that if you are not connected to the internet, the bootstrap will not load and the page will look very 90's. Once the page loads, it should look very early 2000's (but feel free to customize!)
+- Once your server starts successfully, navigate to localhost:5000 and check that the form has successfully loaded.
+	*Note that if you are not connected to the internet, the bootstrap will not load and the page will look very 90's. Once the page loads, it should look very early 2000's (feel free to customize!)
 - Open up your `server.py` and `index.html` files in your text editor of choice and have at it.
 
 
