@@ -17,6 +17,7 @@ It's a simple app written in Python using Flask.
 - Copy the URL for your incoming webhook here and save it. Rename the this file `secrets.sh`
 - Double check that you have a .gitignore file in this repo and that `secrets.sh` is in it (so your URL will never accidentally get committed)
 - Back in your terminal, set up your virtual environment:
+ 	- `virtualenv env`
 	- `source env/bin/activate`
 	- `pip install -r requirements.txt`
 	- `source secrets.sh`
