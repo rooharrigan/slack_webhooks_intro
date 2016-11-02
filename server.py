@@ -29,7 +29,7 @@ def submit_json_to_webhook():
 	# and put fill in the skeleton of the attachemnts dictionary below.
 	# title_1 =
 	# text_1 =
-	# color_1 =
+	# color_1 = editing for testing purpose
 
 
 	#Build the JSON to send
