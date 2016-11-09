@@ -50,7 +50,7 @@ Once you have your server up and running, modify the code you are given to learn
 9. See if you can figure out how to change the icon your webhook is posting with.
 
 
-If you find yourself lost lost, there is directory in this repo called 'final' that has one version of how your app could work.  Feel free to peek in there. :)
+If you find yourself lost lost, there is directory in this repo called 'final' that has one version of how your app could work.  Feel free to peek in there!
 
 ## Final Product
 ![Something like this.](/templates/static/final_example.png)
