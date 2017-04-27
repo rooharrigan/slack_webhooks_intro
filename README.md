@@ -13,9 +13,12 @@ It's a simple app written in Python using Flask.
 ## How to make it go
 - `git clone` the repo from github to your desktop
 - In a terminal session, open the repo and open up the file `renametosecrets.sh`
-- Go to [api.slack.com](api.slack.com), select Create a Custom Integration, and follow the prompts to set up an incoming webhook on your personal test team.
-- Copy the URL for your incoming webhook here and save it. Rename the this file `secrets.sh`
-- Double check that you have a .gitignore file in this repo and that `secrets.sh` is in it (so your URL will never accidentally get committed)
+- Go to [api.slack.com](api.slack.com), select Start Building, and fill out the modal window for creating a new app.
+- Select the Incoming Webhooks menu on the left-hand side, toggle webhooks on, click Add New Webhook to Team and authorize the webhook to a specific channel.
+- Copy the URL for your incoming webhook that appears here.
+- In your terminal, take a peek at the list of files in the repo you just cloned.  Find the `renametosecrets.sh` file and do what it says; rename it to `secrets.sh`
+- Open up your text editor and open your new `secrets.sh` file. Copy the URL into the variable here.
+- Double check that you have a .gitignore file in this repo and that `secrets.sh` is in it (so your URL will never accidentally get committed).
 - Back in your terminal, set up your virtual environment:
  	- `virtualenv env`
 	- `source env/bin/activate`
@@ -49,8 +52,9 @@ Once you have your server up and running, modify the code you are given to learn
 
 9. See if you can figure out how to change the icon your webhook is posting with.
 
+If you want to experiment with different formatting in messages, check out the [Message Builder](https://api.slack.com/docs/messages/builder). It'll show you if you have any errors in your JSON and you can copy and paste right from there into your code.
 
-If you find yourself lost lost, there is directory in this repo called 'final' that has one version of how your app could work.  Feel free to peek in there!
+If you find yourself lost lost, there is directory in this repo called `/final` that has one version of how your app could work.  Feel free to peek in there!
 
 ## Final Product
 ![Something like this.](/templates/static/final_example.png)
